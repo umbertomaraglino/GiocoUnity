@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] public float maxHealth = 10f;
-    [SerializeField] public float health;
+    public float health;
     [SerializeField] PlayerMovement playerMovement;
     Animator playerAnimator;
     public Slider healtslider;

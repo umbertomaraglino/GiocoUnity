@@ -9,7 +9,17 @@ using UnityEngine.InputSystem;
 public class NewMenu : MonoBehaviour
 {
 
+    PlayerMoney playermoney;
+    PlayerHealth playerhealth;
+    PlayerAttack playerattack;
     public GameObject panel;
+
+    void Start() {
+    playermoney = FindObjectOfType<PlayerMoney>(); // Ottieni l'istanza di PlayerMoney nel mondo
+    playerhealth = FindObjectOfType<PlayerHealth>();
+    playerattack = FindObjectOfType<PlayerAttack>();
+    }
+
 
 
     public void PlayGame(){
@@ -40,10 +50,20 @@ public class NewMenu : MonoBehaviour
         {
             if (enemy.CompareTag("Shop") && context.performed)
             {
-                canvas_shop.SetActive(true);
+                panel.SetActive(true);
                 Time.timeScale = 0f;
             }
         }
     }
+
+    public void AumentaAttacco(){
+        playermoney.money -= 10;
+        playerattack.damage += 1;
+        }
+
+    public void AumentaVita(){
+        playermoney.money -= 10;
+        playerhealth.maxHealth += 1;
+        }
 
 }

@@ -18,7 +18,7 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] float KBForce;
     [SerializeField] float attackAnimDelay1;
     [SerializeField] float attackAnimDelay2;
-    [SerializeField] int damage;
+    public int damage;
     // Start is called before the first frame update
     void Start()
     {
